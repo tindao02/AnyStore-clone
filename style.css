@@ -1,0 +1,59 @@
+/* VARIÁVEIS */
+:root {
+  --width-full: 1280px;
+  
+  --font-weight: 400;
+  --font-size: 1rem;
+  --color: #1F2029;
+  --line-height: 1.5em;
+}
+
+
+/* PADRÕES */
+body, h1, a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  color: var(--color);
+  line-height: var(--line-height);
+}
+
+h1 {
+  --font-weight: 700;
+}
+
+/* HEADER */
+header {
+  max-width: min(100%, var(--width-full));
+  margin-inline: auto;
+  height: 90px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  --font-size: 1.5rem;
+}
+
+header .logo:hover {
+  --color: #4b4d63;
+}
+
+header .itens-menu {
+  display: flex;
+  gap: 1rem;
+  
+  --font-size: 0.875rem;
+}
+
+header .itens-menu .item-menu:hover {
+  --color: #4b4d63;
+  --font-weight: 500;
+}
+
+header .itens-menu .item-menu a{
+  cursor: pointer;
+  padding: 10px;
+}

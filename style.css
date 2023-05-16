@@ -6,16 +6,33 @@
   --font-size: 1rem;
   --color: #1F2029;
   --line-height: 1.5em;
+
+  --border: none;
+  --border-radius: 0;
+  --padding: 0;
 }
 
 
 /* PADRÕES */
-body, h1, a {
+body, 
+h1, 
+a, 
+input, 
+form,
+* {
   font-family: 'Poppins', sans-serif;
   font-weight: var(--font-weight);
   font-size: var(--font-size);
   color: var(--color);
   line-height: var(--line-height);
+  border: var(--border);
+  outline: none;
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+}
+
+button {
+  cursor: pointer;
 }
 
 h1 {
@@ -33,6 +50,7 @@ header {
   align-items: center;
 }
 
+/* Logo */
 header .logo {
   --font-size: 1.5rem;
 }
@@ -41,6 +59,7 @@ header .logo:hover {
   --color: #4b4d63;
 }
 
+/* Menu */
 header .itens-menu {
   display: flex;
   gap: 1rem;
@@ -54,6 +73,78 @@ header .itens-menu .item-menu:hover {
 }
 
 header .itens-menu .item-menu a{
-  cursor: pointer;
-  padding: 10px;
+  --padding: 10px;
+}
+
+/* Pesquisa */
+header .campo-pesquisa {
+  display: flex;
+  justify-content: space-between;
+  --border: 1px solid #D1D2DC;
+  --border-radius: 0.375rem;
+  background: transparent;
+  width: 250px;
+}
+
+header .campo-pesquisa:hover {
+  --border: 1px solid #9699B0;
+}
+
+header .campo-pesquisa:has(input:focus-visible) {
+  --border: 2px solid #3182ce;
+}
+
+header .campo-pesquisa .pesquisa,
+header .campo-pesquisa .pesquisa::placeholder {
+  background: transparent;
+  --font-size: 0.75rem;
+  --color: rgba(75, 77, 99, 0.76);
+  --border: 0;
+  --padding: 10px;
+  flex: 1;
+}
+
+header .campo-pesquisa .botao-pesquisa {
+  --border: 0;
+  --border-radius: inherit;
+  text-indent: -999px;
+  overflow: hidden;
+  width: 40px;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+  opacity: 0.5;
+}
+
+header .campo-pesquisa .botao-pesquisa:hover {
+  opacity: 1;
+}
+
+/* end-header */
+.end-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.end-header .carrinho {
+  width: 40px;
+  height: 40px;
+  background: transparent url(img/carrinho-compras.svg) no-repeat center;
+  background-size: 24px;
+  filter: invert(6%) sepia(4%) saturate(5273%) hue-rotate(196deg) brightness(94%) contrast(84%);
+}
+
+.end-header .carrinho:hover,
+.end-header .usuario:hover {
+  filter: invert(30%) sepia(8%) saturate(1548%) hue-rotate(197deg) brightness(87%) contrast(83%);
+  opacity: .7;
+
+}
+
+.end-header .usuario {
+  width: 40px;
+  height: 40px;
+  background: transparent url(img/usuario.svg) no-repeat center;
+  background-size: 24px;
+  filter: invert(6%) sepia(4%) saturate(5273%) hue-rotate(196deg) brightness(94%) contrast(84%);
 }
